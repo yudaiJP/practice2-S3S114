@@ -1,0 +1,219 @@
+/* ==========================================
+   Base Styles / 基本設定
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background-color: #f5f7f4;            /* 茶白（ほんのり緑を感じる、目に優しい白） */
+    color: #242a24;                      /* 織部黒のような深い緑みを帯びた黒 */
+    line-height: 1.9;
+    letter-spacing: 0.06em;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+/* ==========================================
+   Header & Hero / 深緑（お茶）と富士の残雪
+   ========================================== */
+.hero-header {
+    width: 100%;
+    height: 85vh;
+    /* 特産であるお茶の「深緑（#1e3d2f）」と、駿河湾や富士の「清涼感」をイメージしたグラデーション */
+    background: linear-gradient(135deg, #1e3d2f 0%, #0d1a14 100%);
+    color: #f5f7f4;
+    padding: 40px 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+/* 富士山の凛とした佇まいをイメージした、薄いグリーンのアクセント線 */
+.hero-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    width: 90%;
+    height: 1px;
+    background-color: rgba(245, 247, 244, 0.2);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'BIZ UDMincho', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: #a3c9a8; /* 新緑のような淡い緑色のロゴ */
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+}
+
+.nav-links a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #e2e8e2;
+}
+
+.nav-links a:hover {
+    color: #a3c9a8;
+}
+
+.hero-text {
+    max-width: 600px;
+    margin-bottom: 12vh;
+}
+
+.hero-text h1 {
+    font-family: 'BIZ UDMincho', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.hero-text p {
+    font-size: 1rem;
+    color: #cbd5cb;
+}
+
+/* ==========================================
+   Layout / コンテンツ
+   ========================================== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.section {
+    padding: 120px 0;
+}
+
+/* セクションタイトル */
+.section-title {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.section-title span {
+    display: block;
+    font-size: 0.8rem;
+    color: #8fa88f; /* お茶の葉のくすみグリーン */
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.section-title h2 {
+    font-family: 'BIZ UDMincho', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e3d2f; /* 深緑 */
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.05rem;
+    color: #3b443b;
+}
+
+/* グリッド（千筋細工の繊細な線を意識した、すっきりとした配置） */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 40px;
+}
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #e1e6e0;
+    padding: 30px;
+    /* 竹千筋細工の緻密さをイメージした、非常に細く繊細な影 */
+    box-shadow: 0 4px 20px rgba(30, 61, 47, 0.02);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 15px 30px rgba(30, 61, 47, 0.06);
+    border-color: #a3c9a8;
+}
+
+/* ダミーカラー：竹細工の生成り色、漆器の朱・黒 */
+.card-image {
+    width: 100%;
+    height: 250px;
+    margin-bottom: 25px;
+}
+.bg-sensuji { 
+    background-color: #e8dfc7; /* 竹の自然な色 */
+    /* 薄く縦縞を入れることで竹ひごのニュアンスをプラス */
+    background: repeating-linear-gradient(90deg, rgba(255,255,255,0.2) 0px, rgba(255,255,255,0.2) 2px, transparent 2px, transparent 8px), #e8dfc7;
+} 
+.bg-shikki { background-color: #5c1e1e; }  /* 漆の深い赤（溜塗） */
+
+.card-body h3 {
+    font-family: 'BIZ UDMincho', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #1e3d2f;
+}
+
+.card-body p {
+    font-size: 0.95rem;
+    color: #4c544c;
+    text-align: justify;
+}
+
+/* ==========================================
+   Footer / フッター
+   ========================================== */
+footer {
+    background-color: #0d1a14;
+    color: #7a857a;
+    text-align: center;
+    padding: 40px 0;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+}
+
+/* ==========================================
+   Responsive / レスポンシブ対応
+   ========================================== */
+@media (max-width: 768px) {
+    .hero-header {
+        height: auto;
+        min-height: 75vh;
+    }
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+    .section {
+        padding: 80px 0;
+    }
+}
