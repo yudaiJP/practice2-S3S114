@@ -1,0 +1,241 @@
+/* ==========================================
+   Base Styles / 基本設定
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background-color: #fafafa;            /* すっきりとした洗練された白 */
+    color: #1c2024;                      /* 鉄黒（引き締まった黒） */
+    line-height: 1.8;
+    letter-spacing: 0.05em;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* ==========================================
+   Header & Hero / 山笠の「朱」と玄界灘の「青」
+   ========================================== */
+.hero-header {
+    width: 100%;
+    height: 90vh;
+    /* 博多祇園山笠の勢いある「朱・赤」と、アジアに開く海の「紺青」を意識したエネルギッシュな対比 */
+    background: linear-gradient(135deg, #cc3333 0%, #1e2b40 100%);
+    color: #ffffff;
+    padding: 40px 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 背景にさりげなく走る、博多織をイメージしたストライプ */
+.hero-header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 8px 100%;
+    pointer-events: none;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+.logo {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #ffffff;
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+}
+
+.nav-links a {
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.nav-links a:hover {
+    color: #ffcc00; /* お祭りの提灯のような黄色 */
+}
+
+.hero-text {
+    max-width: 650px;
+    margin-bottom: 15vh;
+    z-index: 10;
+}
+
+.sub-caps {
+    font-family: 'Montserrat', sans-serif;
+    display: block;
+    font-size: 0.9rem;
+    letter-spacing: 0.4em;
+    color: #ffcc00;
+    margin-bottom: 15px;
+}
+
+.hero-text h1 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 1.05rem;
+    color: #e2e8f0;
+}
+
+/* ==========================================
+   Layout / コンテンツ
+   ========================================== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.section {
+    padding: 120px 0;
+}
+
+/* セクションタイトル */
+.section-title {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.section-title h2 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #1e2b40;
+    margin-bottom: 5px;
+}
+
+.en-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #cc3333; /* 朱赤 */
+    letter-spacing: 0.3em;
+    font-weight: 700;
+}
+
+.about-content {
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #334155;
+}
+
+/* グリッドレイアウト（シャープで現代的な2カラム） */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+    gap: 40px;
+}
+
+.card {
+    background-color: #ffffff;
+    border-top: 4px solid #cc3333; /* 上部に一本通った男気ある朱線 */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card-image {
+    width: 100%;
+    height: 260px;
+    position: relative;
+    background-color: #e2e8f0;
+}
+
+/* 各カラー（博多織・人形のベース） */
+.bg-ori { background-color: #2a3d56; }     /* 紺青色 */
+.bg-ningyo { background-color: #d9c3b0; }  /* 素焼きベージュ */
+
+/* 博多織の献上柄をCSSストライプで抽象的に表現 */
+.kenjo-pattern {
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    bottom: 0;
+    background: repeating-linear-gradient(90deg, #cc3333 0px, #cc3333 4px, transparent 4px, transparent 12px, #ffcc00 12px, #ffcc00 16px, transparent 16px, transparent 24px);
+    opacity: 0.7;
+}
+
+.card-body {
+    padding: 40px;
+}
+
+.card h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #1e2b40;
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: #475569;
+    text-align: justify;
+}
+
+/* ==========================================
+   Footer / フッター
+   ========================================== */
+footer {
+    background-color: #11151a;
+    color: #707f94;
+    text-align: center;
+    padding: 50px 0;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+}
+
+/* ==========================================
+   Responsive / レスポンシブ対応
+   ========================================== */
+@media (max-width: 768px) {
+    .hero-header {
+        height: auto;
+        min-height: 80vh;
+    }
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+    .section {
+        padding: 70px 0;
+    }
+    .card-body {
+        padding: 25px;
+    }
+}
