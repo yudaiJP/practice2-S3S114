@@ -1,0 +1,218 @@
+/* ==========================================
+   Base Styles / 基本設定
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif; /* 活気を出したいのでベースは太めのゴシック */
+    background-color: #faf6f0;              /* 白練色（ぬくもりのある、ほんのり黄みがかった白） */
+    color: #2b2521;                        /* 濃炭色 */
+    line-height: 1.8;
+    letter-spacing: 0.06em;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+/* ==========================================
+   Header & Hero / 豊臣の「金」と賑わいの「エンジ」
+   ========================================== */
+.hero-header {
+    width: 100%;
+    height: 85vh;
+    /* 金茶（ゴールド）と深みのあるエンジ（金長）をブレンドした、バイタリティある背景 */
+    background: linear-gradient(135deg, #a63a3a 0%, #611c1c 100%);
+    color: #faf6f0;
+    padding: 40px 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    box-shadow: inset 0 0 100px rgba(0,0,0,0.2);
+}
+
+/* 大阪城の「金」をイメージした金のアクセントバー */
+.hero-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, #d49b37, #f3d078, #d49b37);
+}
+
+.header-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: #f3d078; /* ゴールド色のロゴ */
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: #f3d078;
+}
+
+.hero-text {
+    max-width: 650px;
+    margin-bottom: 12vh;
+}
+
+.hero-text h1 {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-text p {
+    font-size: 1.05rem;
+    color: #f0e6db;
+}
+
+/* ==========================================
+   Layout / コンテンツ
+   ========================================== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.section {
+    padding: 100px 0;
+}
+
+/* セクションタイトル（太めでどっしり、かつ華やか） */
+.section-title {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.section-title span {
+    display: block;
+    font-size: 0.85rem;
+    color: #b58228; /* くすんだゴールド */
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    margin-bottom: 8px;
+}
+
+.section-title h2 {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #611c1c; /* エンジ */
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.05rem;
+}
+
+/* 横並びレイアウト（あえて少し角を丸くして親しみやすさを） */
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+}
+
+.card {
+    background-color: #ffffff;
+    flex: 1;
+    min-width: 320px;
+    border-radius: 8px; /* 角をほんのり丸く */
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(166, 58, 58, 0.05);
+    border: 1px solid #ebdccb;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+/* ダミーカラー：包丁の鉄色、手ぬぐいの鮮やかな色 */
+.card-image {
+    width: 100%;
+    height: 240px;
+}
+.bg-sakai { background-color: #43494e; }  /* 鉄黒 */
+.bg-chusen { background-color: #cf6d81; } /* 鮮やかな紅梅色 */
+
+.card-body {
+    padding: 35px;
+}
+
+.card h3 {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #a63a3a;
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: #444444;
+}
+
+/* ==========================================
+   Footer / フッター
+   ========================================== */
+footer {
+    background-color: #241d1a;
+    color: #bdae9e;
+    text-align: center;
+    padding: 40px 0;
+    font-size: 0.85rem;
+}
+
+/* ==========================================
+   Responsive / レスポンシブ
+   ========================================== */
+@media (max-width: 768px) {
+    .hero-header {
+        height: auto;
+        min-height: 75vh;
+    }
+    .header-wrap {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .hero-text h1 {
+        font-size: 2.3rem;
+    }
+    .section {
+        padding: 60px 0;
+    }
+}
