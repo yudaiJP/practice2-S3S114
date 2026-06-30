@@ -1,0 +1,218 @@
+/* ==========================================
+   Base Styles / 基本設定
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Shippori Mincho', serif; /* カチッとした美しい明朝体 */
+    background-color: #f7f6f5;            /* 生成り色（わずかにグレー味のある白） */
+    color: #1a1a1a;                      /* 消炭色（引き締まった黒） */
+    line-height: 1.8;
+    letter-spacing: 0.05em;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+/* ==========================================
+   Header & Hero / 江戸紫を基調とした粋なメイン
+   ========================================== */
+.hero-header {
+    width: 100%;
+    height: 90vh;
+    /* 江戸紫（えどむらさき）系の深い色と格子を意識した直線的なデザイン */
+    background: linear-gradient(rgba(43, 28, 54, 0.9), rgba(24, 15, 30, 0.95)), 
+                repeating-linear-gradient(45deg, rgba(255,255,255,0.01) 0px, rgba(255,255,255,0.01) 2px, transparent 2px, transparent 10px);
+    color: #f7f6f5;
+    padding: 40px 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-bottom: 4px solid #745399; /* 江戸紫のアクセントライン */
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    border-left: 3px solid #745399;
+    padding-left: 15px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links a {
+    font-size: 0.95rem;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+/* ホバー時にスッと線が伸びるアニメーション */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #745399;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.hero-text {
+    max-width: 600px;
+    margin-bottom: 15vh;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 25px;
+}
+
+.hero-text p {
+    font-size: 1.05rem;
+    color: #c9c4be; /* 深川鼠のような落ち着いたグレー */
+}
+
+/* ==========================================
+   Layout / コンテンツ
+   ========================================== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.section {
+    padding: 120px 0;
+}
+
+/* セクションタイトル */
+.section-title {
+    margin-bottom: 80px;
+    border-left: 1px solid #1a1a1a;
+    padding-left: 20px;
+}
+
+.section-title span {
+    display: block;
+    font-size: 0.85rem;
+    color: #745399;
+    letter-spacing: 0.2em;
+    margin-bottom: 5px;
+}
+
+.section-title h2 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* 江戸の粋について */
+.about-content {
+    max-width: 800px;
+    font-size: 1.1rem;
+}
+
+/* 工芸品（2カラムのすっきりした格子） */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 50px;
+}
+
+.card {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e2dfda;
+}
+
+/* 江戸切子の藍色、江戸小紋の鼠色をイメージしたダミーカラー */
+.card-image {
+    width: 100%;
+    height: 280px;
+    background-color: #ccc;
+}
+.bg-kiriko { background-color: #1e2a3a; } /* 瑠璃色・藍色イメージ */
+.bg-komon { background-color: #4a4f54; }  /* 意気な鼠色イメージ */
+
+.card-body {
+    padding: 40px;
+}
+
+.card h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #2b1c36; /* 江戸紫 */
+    position: relative;
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: #444444;
+    text-align: justify;
+}
+
+/* ==========================================
+   Footer / フッター
+   ========================================== */
+footer {
+    background-color: #111111;
+    color: #888888;
+    text-align: center;
+    padding: 50px 0;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    border-top: 1px solid #222;
+}
+
+/* ==========================================
+   Responsive / レスポンシブ対応
+   ========================================== */
+@media (max-width: 768px) {
+    .hero-header {
+        height: auto;
+        min-height: 80vh;
+        padding: 30px 20px;
+    }
+    .header-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+    .section {
+        padding: 80px 0;
+    }
+    .card-body {
+        padding: 25px;
+    }
+}
