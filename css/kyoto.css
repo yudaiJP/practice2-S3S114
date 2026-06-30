@@ -1,0 +1,212 @@
+/* ==========================================
+   Base Styles / 基本設定
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Serif JP', serif; /* 美しい明朝体 */
+    background-color: #fcfbf7;          /* 鳥の子色（柔らかな白） */
+    color: #2b2b2b;                    /* 墨色に近い黒 */
+    line-height: 1.8;
+    letter-spacing: 0.08em;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+/* ==========================================
+   Header & Hero / ヘッダーとメインビジュアル
+   ========================================== */
+.hero-header {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    /* 背景には京都をイメージした深みのある茜色とグラデーション */
+    background: linear-gradient(135deg, #6b1d1f 0%, #3a0f11 100%);
+    color: #fcfbf7;
+    padding: 30px 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+}
+
+.nav-links {
+    position: absolute;
+    top: 35px;
+    right: 5%;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    font-size: 0.9rem;
+}
+
+.nav-links a:hover {
+    color: #d4a357; /* 金茶色（アクセントカラー） */
+}
+
+.hero-text {
+    max-width: 600px;
+    margin-bottom: 10vh;
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 1rem;
+    color: #e0dcd3;
+}
+
+/* ==========================================
+   Layout / レイアウト
+   ========================================== */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: 100px 0;
+}
+
+/* セクションタイトル（縦書き風ニュアンス） */
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title span {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #d4a357; /* 金茶色 */
+    letter-spacing: 0.3em;
+    margin-bottom: 10px;
+}
+
+.section-title h2 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+}
+
+/* タイトルの下の繊細な線 */
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 1px;
+    background-color: #6b1d1f;
+}
+
+/* 趣について */
+.about-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* グリッド（カードレイアウト） */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #eaddca; /* 薄い生成り色の境界線 */
+    padding: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+}
+
+/* ダミーの画像プレースホルダー（和風の色を配置） */
+.card-image {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 20px;
+    background-color: #eee;
+}
+
+.bg-nishijin { background-color: #553842; } /* 菖蒲色系 */
+.bg-kiyomizu { background-color: #3b4644; } /* 藍鼠系 */
+.bg-kyo-yuzen { background-color: #843336; } /* 茜色系 */
+
+.card h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+    color: #6b1d1f;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: #555;
+    text-align: justify;
+}
+
+/* ==========================================
+   Footer / フッター
+   ========================================== */
+footer {
+    background-color: #1a1a1a;
+    color: #a3a3a3;
+    text-align: center;
+    padding: 40px 0;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+}
+
+/* ==========================================
+   Responsive / レスポンシブ対応
+   ========================================== */
+@media (max-width: 768px) {
+    .hero-header {
+        height: auto;
+        min-height: 70vh;
+    }
+    
+    .nav-links {
+        position: static;
+        margin-top: 20px;
+        justify-content: center;
+    }
+    
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+    
+    .section {
+        padding: 60px 0;
+    }
+}
